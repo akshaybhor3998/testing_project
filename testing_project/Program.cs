@@ -1,12 +1,16 @@
-﻿public class Testing
+﻿using System.Security.Cryptography.X509Certificates;
+
+public class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        int[] data = { 1, 2, 3, 4, 5, 6,5 };
-        Array.Sort(data,(x,y)=>y.CompareTo(x));
-        foreach (var item in data)
+        for(int i =1; i <= 6; ++i)
         {
-            Console.WriteLine(item + " ");
+            for(int j =1; j <= i; ++j)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
         }
     }
 }
