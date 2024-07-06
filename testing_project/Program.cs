@@ -1,16 +1,22 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
+﻿// Need to generate Reverse String for Without reverse String function
 public class Program
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        for(int i =1; i <= 6; ++i)
+        Console.WriteLine("please enter your string Value:");
+        string original= Console.ReadLine();
+        string reverseString = GenerateReverseString(original);
+        Console.WriteLine("Original string : " + original);
+        Console.WriteLine("reverseString string : " + reverseString);
+    }
+    static string GenerateReverseString(string input)
+    {
+        char[] charArray = new char[input.Length];
+        int endIndex=input.Length-1;
+        for(int startIndex =0; startIndex<=endIndex; startIndex++)
         {
-            for(int j =1; j <= i; ++j)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
+            charArray[startIndex] = input[endIndex - startIndex];
         }
+        return new string(charArray);
     }
 }
